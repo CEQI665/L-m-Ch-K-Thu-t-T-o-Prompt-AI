@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infographic: Hướng Dẫn Toàn Diện về Kỹ Thuật Tạo Prompt AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .flow-node {
+            border: 2px solid #00B4D8;
+            background-color: #ffffff;
+            color: #004FFF;
+        }
+        .flow-connector {
+            width: 2px;
+            background-color: #00B4D8;
+            margin: 0 auto;
+        }
+        .flow-connector-horiz {
+            height: 2px;
+            background-color: #00B4D8;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-16">
+            <h1 class="text-4xl md:text-6xl font-black text-[#004FFF] mb-4 text-shadow">Làm Chủ Kỹ Thuật Tạo Prompt AI</h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Từ những nguyên tắc cơ bản đến các chiến lược nâng cao, hãy cùng khám phá cách giao tiếp hiệu quả với AI để giải phóng tiềm năng sáng tạo của bạn.</p>
+        </header>
+
+        <section id="principles" class="mb-20">
+            <h2 class="text-3xl font-bold text-center mb-4 text-[#004FFF]">Nền Tảng Của Mọi Prompt Hiệu Quả</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Dù bạn đang tạo văn bản hay hình ảnh, những nguyên tắc cốt lõi này là chìa khóa để AI hiểu rõ và thực hiện chính xác yêu cầu của bạn.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="card text-center">
+                    <div class="text-4xl mb-4">🎯</div>
+                    <h3 class="text-xl font-bold mb-2 text-[#00B4D8]">Cụ Thể & Rõ Ràng</h3>
+                    <p class="text-gray-600">Cung cấp chi tiết, tránh mơ hồ. AI cần hướng dẫn chính xác để tạo ra kết quả mong muốn.</p>
+                </div>
+                <div class="card text-center">
+                    <div class="text-4xl mb-4">📚</div>
+                    <h3 class="text-xl font-bold mb-2 text-[#00B4D8]">Cung Cấp Ngữ Cảnh</h3>
+                    <p class="text-gray-600">Đặt yêu cầu trong một bối cảnh cụ thể. Thông tin nền giúp AI điều chỉnh phản hồi phù hợp hơn.</p>
+                </div>
+                <div class="card text-center">
+                    <div class="text-4xl mb-4">👍</div>
+                    <h3 class="text-xl font-bold mb-2 text-[#00B4D8]">Hướng Dẫn Tích Cực</h3>
+                    <p class="text-gray-600">Tập trung vào "hãy làm" thay vì "đừng làm". Chỉ dẫn rõ ràng về những gì cần thực hiện sẽ hiệu quả hơn.</p>
+                </div>
+                <div class="card text-center">
+                    <div class="text-4xl mb-4">🔄</div>
+                    <h3 class="text-xl font-bold mb-2 text-[#00B4D8]">Lặp Lại & Tinh Chỉnh</h3>
+                    <p class="text-gray-600">Xem việc tạo prompt là một quá trình. Thử nghiệm, đánh giá và cải tiến liên tục để đạt kết quả tốt nhất.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="llm-prompting" class="mb-20">
+            <h2 class="text-3xl font-bold text-center mb-12 text-[#004FFF]">Kỹ Thuật Prompting cho Mô Hình Ngôn Ngữ Lớn (LLMs)</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="card">
+                    <h3 class="text-2xl font-bold text-center mb-4 text-[#00B4D8]">So Sánh Hiệu Quả Các Kỹ Thuật Cơ Bản</h3>
+                    <p class="text-gray-600 mb-6 text-center">Hiệu quả của prompt tăng lên đáng kể khi chúng ta cung cấp cho mô hình các ví dụ cụ thể, giúp AI hiểu rõ hơn về định dạng và phong cách mong muốn.</p>
+                    <div class="chart-container h-72 md:h-80">
+                        <canvas id="basicTechniquesChart"></canvas>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3 class="text-2xl font-bold text-center mb-4 text-[#00B4D8]">Khung PARTS của Google</h3>
+                     <p class="text-gray-600 mb-6 text-center">Một công thức đơn giản để cấu trúc prompt, đảm bảo bạn không bỏ sót bất kỳ yếu tố quan trọng nào để hướng dẫn AI.</p>
+                    <ul class="space-y-3 text-lg">
+                        <li class="flex items-start"><span class="font-bold text-[#004FFF] w-6">P</span><span><strong class="text-[#00B4D8]">ersona (Vai trò):</strong> Gán cho AI một vai trò (ví dụ: chuyên gia, nhà thơ).</span></li>
+                        <li class="flex items-start"><span class="font-bold text-[#004FFF] w-6">A</span><span><strong class="text-[#00B4D8]">ct (Hành động):</strong> Nêu rõ nhiệm vụ cần thực hiện.</span></li>
+                        <li class="flex items-start"><span class="font-bold text-[#004FFF] w-6">R</span><span><strong class="text-[#00B4D8]">ecipient (Người nhận):</strong> Xác định đối tượng của nội dung.</span></li>
+                        <li class="flex items-start"><span class="font-bold text-[#004FFF] w-6">T</span><span><strong class="text-[#00B4D8]">heme (Chủ đề):</strong> Cung cấp chủ đề hoặc khái niệm chính.</span></li>
+                        <li class="flex items-start"><span class="font-bold text-[#004FFF] w-6">S</span><span><strong class="text-[#00B4D8]">tructure (Cấu trúc):</strong> Yêu cầu định dạng đầu ra cụ thể.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="advanced-llm" class="mb-20">
+            <h3 class="text-3xl font-bold text-center mb-4 text-[#004FFF]">Tư Duy Nâng Cao: Chain-of-Thought vs. Tree-of-Thoughts</h3>
+            <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">Để giải quyết các vấn đề phức tạp, chúng ta có thể hướng dẫn AI "suy nghĩ" theo các quy trình khác nhau. Chain-of-Thought (CoT) lý luận theo một đường thẳng, trong khi Tree-of-Thoughts (ToT) khám phá nhiều khả năng cùng lúc.</p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="card">
+                    <h4 class="text-2xl font-bold text-center mb-6 text-[#00B4D8]">Chain-of-Thought (CoT): Lý Luận Tuần Tự</h4>
+                    <div class="flex flex-col items-center space-y-2">
+                        <div class="p-4 rounded-lg text-center flow-node w-4/5">1. Vấn đề</div>
+                        <div class="flow-connector h-8"></div>
+                        <div class="p-4 rounded-lg text-center flow-node w-4/5">2. Bước suy luận 1</div>
+                        <div class="flow-connector h-8"></div>
+                        <div class="p-4 rounded-lg text-center flow-node w-4/5">3. Bước suy luận 2</div>
+                         <div class="flow-connector h-8"></div>
+                        <div class="p-4 rounded-lg text-center flow-node w-4/5 bg-[#ADE8F4]">4. Kết luận</div>
+                    </div>
+                </div>
+                 <div class="card">
+                    <h4 class="text-2xl font-bold text-center mb-6 text-[#00B4D8]">Tree-of-Thoughts (ToT): Khám Phá Phân Nhánh</h4>
+                    <div class="flex flex-col items-center">
+                        <div class="p-4 rounded-lg text-center flow-node w-4/5 mb-2">1. Vấn đề</div>
+                        <div class="flow-connector h-8"></div>
+                        <div class="flex justify-around w-full">
+                            <div class="flow-connector-horiz flex-1"></div>
+                            <div class="flow-connector-horiz flex-1"></div>
+                        </div>
+                        <div class="flex w-full -mt-1">
+                            <div class="w-1/2 flex justify-center"><div class="flow-connector h-8"></div></div>
+                            <div class="w-1/2 flex justify-center"><div class="flow-connector h-8"></div></div>
+                        </div>
+                        <div class="flex justify-around w-full text-center">
+                            <div class="w-1/2 p-2"><div class="p-3 rounded-lg flow-node">2a. Hướng 1</div></div>
+                            <div class="w-1/2 p-2"><div class="p-3 rounded-lg flow-node">2b. Hướng 2</div></div>
+                        </div>
+                        <div class="flex w-full">
+                            <div class="w-1/2 flex justify-center"><div class="flow-connector h-8"></div></div>
+                            <div class="w-1/2 flex justify-center"><div class="flow-connector h-8"></div></div>
+                        </div>
+                         <div class="flex justify-around w-full text-center">
+                             <div class="w-1/2 p-2"><div class="p-3 rounded-lg flow-node">3a. Đánh giá</div></div>
+                             <div class="w-1/2 p-2"><div class="p-3 rounded-lg flow-node bg-[#FF6B6B] text-white">3b. Ngõ cụt</div></div>
+                        </div>
+                         <div class="flex w-full">
+                            <div class="w-1/2 flex justify-center"><div class="flow-connector h-8"></div></div>
+                        </div>
+                         <div class="flex justify-start w-full text-center">
+                             <div class="w-1/2 p-2"><div class="p-3 rounded-lg flow-node bg-[#ADE8F4]">4. Kết luận tốt nhất</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="image-prompting" class="mb-20">
+            <h2 class="text-3xl font-bold text-center mb-12 text-[#004FFF]">Nghệ Thuật Tạo Prompt Cho AI Tạo Ảnh</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">Tạo ảnh đòi hỏi một "ngôn ngữ" mô tả trực quan. Việc kết hợp hài hòa các yếu tố dưới đây sẽ giúp bạn "vẽ một bức tranh bằng lời nói" để AI hiện thực hóa ý tưởng.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="card">
+                    <h3 class="text-2xl font-bold text-center mb-4 text-[#00B4D8]">Giải Phẫu Một Prompt Ảnh Hoàn Hảo</h3>
+                     <p class="text-gray-600 mb-6 text-center">Mỗi thành phần đóng một vai trò quan trọng trong việc định hình kết quả cuối cùng. Cân bằng các yếu tố này để kiểm soát hình ảnh của bạn.</p>
+                    <div class="chart-container h-80 md:h-96">
+                        <canvas id="imagePromptRadarChart"></canvas>
+                    </div>
+                </div>
+                <div class="card">
+                     <h3 class="text-2xl font-bold text-center mb-4 text-[#00B4D8]">So Sánh Các "Ông Lớn" Tạo Ảnh</h3>
+                    <p class="text-gray-600 mb-6 text-center">Mỗi công cụ có điểm mạnh riêng. Lựa chọn nền tảng phù hợp phụ thuộc vào mục tiêu của bạn: sự dễ dùng, khả năng kiểm soát nghệ thuật, hay tính tùy biến cao.</p>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left">
+                            <thead class="bg-[#ADE8F4] text-[#004FFF]">
+                                <tr>
+                                    <th class="p-3">Tiêu chí</th>
+                                    <th class="p-3">DALL-E 3</th>
+                                    <th class="p-3">Midjourney</th>
+                                    <th class="p-3">Stable Diffusion</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b">
+                                    <td class="p-3 font-semibold">Dễ sử dụng</td>
+                                    <td class="p-3 text-green-600 font-bold">Rất cao</td>
+                                    <td class="p-3 text-yellow-600 font-bold">Trung bình</td>
+                                    <td class="p-3 text-red-600 font-bold">Thấp</td>
+                                </tr>
+                                <tr class="border-b bg-gray-50">
+                                    <td class="p-3 font-semibold">Kiểm soát nghệ thuật</td>
+                                    <td class="p-3 text-yellow-600 font-bold">Trung bình</td>
+                                    <td class="p-3 text-green-600 font-bold">Rất cao</td>
+                                    <td class="p-3 text-green-600 font-bold">Cao</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="p-3 font-semibold">Khả năng tùy biến</td>
+                                    <td class="p-3 text-red-600 font-bold">Thấp</td>
+                                    <td class="p-3 text-yellow-600 font-bold">Trung bình</td>
+                                    <td class="p-3 text-green-600 font-bold">Rất cao</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="p-3 font-semibold">Tích hợp văn bản</td>
+                                    <td class="p-3 text-green-600 font-bold">Rất tốt</td>
+                                    <td class="p-3 text-red-600 font-bold">Kém</td>
+                                    <td class="p-3 text-yellow-600 font-bold">Trung bình</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="advanced-image" class="mb-20">
+            <h3 class="text-3xl font-bold text-center mb-4 text-[#004FFF]">Thủ Thuật Nâng Cao Cho Chuyên Gia Tạo Ảnh</h3>
+            <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">Làm chủ các kỹ thuật này để tinh chỉnh hình ảnh của bạn đến mức hoàn hảo và loại bỏ các yếu tố không mong muốn.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                 <div class="card">
+                    <h4 class="text-2xl font-bold text-center mb-4 text-[#00B4D8]">Prompt Phủ Định: Loại Bỏ Yếu Tố Thừa</h4>
+                    <p class="text-gray-600 mb-6">Đây là công cụ mạnh mẽ để chỉ cho AI những gì bạn *không* muốn thấy. Sử dụng nó để dọn dẹp các chi tiết không mong muốn, sửa lỗi hoặc tránh một phong cách nhất định.</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="text-center">
+                             <p class="font-semibold mb-2">Không có Prompt Phủ định</p>
+                             <img src="https://placehold.co/200x150/FF6B6B/FFFFFF?text=Ảnh+có%0AWatermark" alt="Hình ảnh ví dụ có watermark hoặc văn bản không mong muốn" class="w-full h-auto rounded-lg shadow-md">
+                        </div>
+                         <div class="text-center">
+                             <p class="font-semibold mb-2">Với `--no text, watermark`</p>
+                             <img src="https://placehold.co/200x150/00B4D8/FFFFFF?text=Ảnh+Sạch" alt="Hình ảnh ví dụ sạch sẽ, không có watermark hoặc văn bản" class="w-full h-auto rounded-lg shadow-md border-4 border-[#00B4D8]">
+                        </div>
+                    </div>
+                </div>
+                 <div class="card">
+                    <h4 class="text-2xl font-bold text-center mb-4 text-[#00B4D8]">Trọng Số Prompt: Nhấn Mạnh Điều Quan Trọng</h4>
+                    <p class="text-gray-600 mb-6">Bạn có thể "ra lệnh" cho AI tập trung hơn vào một số yếu tố nhất định bằng cách tăng trọng số của chúng. Điều này rất hữu ích khi kết hợp nhiều ý tưởng.</p>
+                    <div class="bg-gray-100 p-4 rounded-lg">
+                        <p class="font-mono text-sm">space ship::1.5, forest::0.5</p>
+                    </div>
+                     <p class="text-gray-600 mt-4">Trong ví dụ này, AI sẽ ưu tiên "tàu không gian" hơn là "khu rừng", làm cho con tàu trở thành yếu tố nổi bật và chiếm ưu thế trong hình ảnh.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="gemini-prompt-generator" class="mb-20">
+            <h2 class="text-3xl font-bold text-center mb-12 text-[#004FFF]">Prompt Khám Phá ✨</h2>
+            <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">Hãy cùng Gemini tạo ra những prompt hiệu quả cho ý tưởng của bạn! Nhập mô tả và phong cách mong muốn, Gemini sẽ giúp bạn tạo ra prompt cho mô hình ngôn ngữ hoặc tạo ảnh.</p>
+            <div class="card p-6">
+                <div class="mb-4">
+                    <label for="ideaInput" class="block text-gray-700 text-sm font-bold mb-2">Mô tả ý tưởng của bạn:</label>
+                    <textarea id="ideaInput" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-24" placeholder="Ví dụ: một câu chuyện về hiệp sĩ rồng, hoặc một hình ảnh về thành phố tương lai"></textarea>
+                </div>
+                <div class="mb-4">
+                    <label for="styleInput" class="block text-gray-700 text-sm font-bold mb-2">Phong cách/Thể loại:</label>
+                    <input type="text" id="styleInput" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Ví dụ: hài hước, khoa học viễn tưởng, phong cách nghệ thuật cổ điển">
+                </div>
+                <div class="mb-6">
+                    <label for="promptType" class="block text-gray-700 text-sm font-bold mb-2">Loại Prompt:</label>
+                    <select id="promptType" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        <option value="llm">Mô hình Ngôn ngữ (LLM)</option>
+                        <option value="image">Tạo ảnh</option>
+                    </select>
+                </div>
+                <button id="generatePromptBtn" class="bg-[#004FFF] hover:bg-[#00B4D8] text-white font-bold py-3 px-6 rounded-lg focus:outline-none focus:shadow-outline w-full transform transition duration-300 hover:scale-105">
+                    Tạo Prompt ✨
+                </button>
+                <div id="loadingIndicator" class="text-center text-gray-600 mt-4 hidden">Đang tạo prompt, vui lòng đợi...</div>
+                <div class="mt-8 p-4 bg-gray-100 border border-gray-300 rounded-lg">
+                    <h3 class="text-lg font-bold text-gray-700 mb-2">Prompt của bạn:</h3>
+                    <pre id="generatedPromptOutput" class="whitespace-pre-wrap text-gray-800 text-sm"></pre>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center mt-16 pt-8 border-t border-gray-300">
+            <p class="text-gray-600">Infographic được tạo dựa trên báo cáo nghiên cứu sâu về kỹ thuật tạo prompt AI.</p>
+            <p class="text-sm text-gray-500 mt-2">Ngôn ngữ: Tiếng Việt | Nền tảng: Chart.js, Tailwind CSS & Gemini API</p>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const tooltipTitleCallback = (tooltipItems) => {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                    return label.join(' ');
+                }
+                return label;
+            };
+
+            const brandColors = {
+                blue: '#004FFF',
+                lightBlue: '#00B4D8',
+                skyBlue: '#ADE8F4',
+                red: '#FF6B6B',
+                yellow: '#FFE66D'
+            };
+            
+            const commonChartOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#374151',
+                             font: {
+                                size: 14,
+                                family: 'Inter'
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        },
+                        backgroundColor: '#ffffff',
+                        titleColor: '#374151',
+                        bodyColor: '#374151',
+                        borderColor: '#e5e7eb',
+                        borderWidth: 1,
+                        padding: 10
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: { color: '#6b7280', font: { family: 'Inter' } },
+                        grid: { display: false }
+                    },
+                    y: {
+                        ticks: { color: '#6b7280', font: { family: 'Inter' } },
+                        grid: { color: '#e5e7eb' },
+                        beginAtZero: true
+                    }
+                }
+            };
+            
+            const ctxBasic = document.getElementById('basicTechniquesChart');
+            if(ctxBasic) {
+                new Chart(ctxBasic, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Zero-Shot', 'One-Shot', 'Few-Shot'],
+                        datasets: [{
+                            label: 'Mức độ hiệu quả (tương đối)',
+                            data: [40, 75, 95],
+                            backgroundColor: [brandColors.skyBlue, brandColors.lightBlue, brandColors.blue],
+                            borderColor: [brandColors.skyBlue, brandColors.lightBlue, brandColors.blue],
+                            borderWidth: 1,
+                            borderRadius: 5
+                        }]
+                    },
+                    options: {
+                        ...commonChartOptions,
+                        indexAxis: 'y',
+                    }
+                });
+            }
+
+            const ctxRadar = document.getElementById('imagePromptRadarChart');
+            if(ctxRadar) {
+                 new Chart(ctxRadar, {
+                    type: 'radar',
+                    data: {
+                        labels: ['Chủ thể', 'Phong cách', 'Ánh sáng', 'Bố cục', 'Màu sắc', 'Góc máy'],
+                        datasets: [{
+                            label: 'Tầm quan trọng của yếu tố',
+                            data: [9, 8, 7, 8, 7, 6],
+                            fill: true,
+                            backgroundColor: 'rgba(0, 180, 216, 0.2)',
+                            borderColor: brandColors.lightBlue,
+                            pointBackgroundColor: brandColors.lightBlue,
+                            pointBorderColor: '#fff',
+                            pointHoverBackgroundColor: '#fff',
+                            pointHoverBorderColor: brandColors.lightBlue
+                        }]
+                    },
+                    options: {
+                       responsive: true,
+                       maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                             tooltip: {
+                                callbacks: {
+                                    title: tooltipTitleCallback
+                                },
+                                backgroundColor: '#ffffff',
+                                titleColor: '#374151',
+                                bodyColor: '#374151',
+                                borderColor: '#e5e7eb',
+                                borderWidth: 1,
+                                padding: 10
+                            }
+                        },
+                       scales: {
+                            r: {
+                                angleLines: {
+                                    color: '#e5e7eb'
+                                },
+                                grid: {
+                                    color: '#e5e7eb'
+                                },
+                                pointLabels: {
+                                    color: '#374151',
+                                    font: {
+                                        size: 14,
+                                        family: 'Inter',
+                                        weight: '600'
+                                    }
+                                },
+                                ticks: {
+                                    backdropColor: 'transparent',
+                                    color: '#6b7280'
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            const generatePromptBtn = document.getElementById('generatePromptBtn');
+            const ideaInput = document.getElementById('ideaInput');
+            const styleInput = document.getElementById('styleInput');
+            const promptType = document.getElementById('promptType');
+            const loadingIndicator = document.getElementById('loadingIndicator');
+            const generatedPromptOutput = document.getElementById('generatedPromptOutput');
+
+            if (generatePromptBtn) {
+                generatePromptBtn.addEventListener('click', async () => {
+                    const idea = ideaInput.value.trim();
+                    const style = styleInput.value.trim();
+                    const type = promptType.value;
+
+                    if (!idea) {
+                        generatedPromptOutput.textContent = "Vui lòng nhập mô tả ý tưởng của bạn.";
+                        return;
+                    }
+
+                    loadingIndicator.classList.remove('hidden');
+                    generatedPromptOutput.textContent = '';
+                    generatePromptBtn.disabled = true;
+
+                    let prompt = "";
+                    if (type === 'llm') {
+                        prompt = `Hãy đóng vai trò là một chuyên gia tạo prompt cho mô hình ngôn ngữ lớn. Tạo một prompt chi tiết cho mô hình ngôn ngữ dựa trên ý tưởng: "${idea}". Phong cách hoặc thể loại mong muốn là: "${style}". Prompt phải rõ ràng, cụ thể và hướng dẫn mô hình tạo ra nội dung hấp dẫn.`;
+                    } else if (type === 'image') {
+                        prompt = `Hãy đóng vai trò là một chuyên gia tạo prompt cho mô hình tạo ảnh. Tạo một prompt chi tiết và sống động cho mô hình tạo ảnh dựa trên ý tưởng: "${idea}". Phong cách hoặc thể loại mong muốn là: "${style}". Prompt phải tập trung vào các yếu tố thị giác như chủ thể, phong cách nghệ thuật, ánh sáng, bố cục, màu sắc và góc máy.`;
+                    }
+                    
+                    let chatHistory = [];
+                    chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                    const payload = { contents: chatHistory };
+                    const apiKey = "";
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                    try {
+                        const response = await fetch(apiUrl, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
+                        const result = await response.json();
+                        if (result.candidates && result.candidates.length > 0 &&
+                            result.candidates[0].content && result.candidates[0].content.parts &&
+                            result.candidates[0].content.parts.length > 0) {
+                            const text = result.candidates[0].content.parts[0].text;
+                            generatedPromptOutput.textContent = text;
+                        } else {
+                            generatedPromptOutput.textContent = "Không thể tạo prompt. Vui lòng thử lại.";
+                        }
+                    } catch (error) {
+                        generatedPromptOutput.textContent = `Đã xảy ra lỗi: ${error.message}. Vui lòng kiểm tra kết nối mạng hoặc thử lại sau.`;
+                    } finally {
+                        loadingIndicator.classList.add('hidden');
+                        generatePromptBtn.disabled = false;
+                    }
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
