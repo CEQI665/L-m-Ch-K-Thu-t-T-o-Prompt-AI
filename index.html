@@ -8,7 +8,8 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet"></noscript>
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -251,7 +252,7 @@
                     <div class="bg-gray-100 p-4 rounded-lg border border-gray-300 mb-4">
                         <pre class="whitespace-pre-wrap font-mono text-sm">Tạo một tấm ảnh về câu chuyện con cáo và chùm nho</pre>
                     </div>
-                    <img src="Picture1.png" alt="Ảnh minh họa đơn giản về con cáo và chùm nho" class="w-full h-auto rounded-lg shadow-md border border-gray-300">
+                    <img src="Picture1.png" alt="Ảnh minh họa đơn giản về con cáo và chùm nho" class="w-full h-auto rounded-lg shadow-md border border-gray-300" loading="lazy">
                 </div>
                 <div class="card">
                     <h4 class="text-2xl font-bold mb-4 text-[#00B4D8]">Ví dụ 2: Prompt Chi tiết & Chuyên nghiệp</h4>
@@ -259,7 +260,7 @@
                     <div class="bg-gray-100 p-4 rounded-lg border border-gray-300 mb-4">
                         <pre class="whitespace-pre-wrap font-mono text-sm">Một hình minh họa theo phong cách Pixar 3D về câu chuyện ngụ ngôn kinh điển "The Fox and the Grapes". Một chú cáo đỏ dễ thương, cách điệu đứng trên hai chân sau, vươn người về phía chùm nho tím sáng bóng treo trên một cây nho cao. Chú cáo có đôi mắt biểu cảm thể hiện cả sự khao khát và thất vọng. Cảnh vườn nho sống động và đầy màu sắc, với ánh nắng ấm áp, lá xanh tươi và bầu trời xanh dịu nhẹ. Được dựng theo phong cách hoạt hình 3D điện ảnh với màu sắc tươi sáng, vui tươi, bóng đổ nhẹ nhàng và bầu không khí truyện cổ tích kỳ diệu. Được cách điệu giống như hoạt hình Pixar hoặc DreamWorks, với độ chi tiết cao về lông, ánh sáng và môi trường.</pre>
                     </div>
-                    <img src="Picture2.png" alt="Ảnh minh họa phong cách Pixar 3D về con cáo và chùm nho" class="w-full h-auto rounded-lg shadow-md border border-gray-300">
+                    <img src="Picture2.png" alt="Ảnh minh họa phong cách Pixar 3D về con cáo và chùm nho" class="w-full h-auto rounded-lg shadow-md border border-gray-300" loading="lazy">
                 </div>
             </div>
             <!-- End of new section for image prompt examples -->
@@ -275,11 +276,11 @@
                     <div class="grid grid-cols-2 gap-4">
                         <div class="text-center">
                              <p class="font-semibold mb-2">Không có Prompt Phủ định</p>
-                             <img src="https://placehold.co/200x150/FF6B6B/FFFFFF?text=Ảnh+có%0AWatermark" alt="Hình ảnh ví dụ có watermark hoặc văn bản không mong muốn" class="w-full h-auto rounded-lg shadow-md">
+                             <img src="https://placehold.co/200x150/FF6B6B/FFFFFF?text=Ảnh+có%0AWatermark" alt="Hình ảnh ví dụ có watermark hoặc văn bản không mong muốn" class="w-full h-auto rounded-lg shadow-md" loading="lazy">
                         </div>
                          <div class="text-center">
                              <p class="font-semibold mb-2">Với `--no text, watermark`</p>
-                             <img src="https://placehold.co/200x150/00B4D8/FFFFFF?text=Ảnh+Sạch" alt="Hình ảnh ví dụ sạch sẽ, không có watermark hoặc văn bản" class="w-full h-auto rounded-lg shadow-md border-4 border-[#00B4D8]">
+                             <img src="https://placehold.co/200x150/00B4D8/FFFFFF?text=Ảnh+Sạch" alt="Hình ảnh ví dụ sạch sẽ, không có watermark hoặc văn bản" class="w-full h-auto rounded-lg shadow-md border-4 border-[#00B4D8]" loading="lazy">
                         </div>
                     </div>
                 </div>
